@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/ShopFrame/static/css/main.1485d6a8.css",
+    "main.js": "/ShopFrame/static/js/main.cb605ceb.js",
+    "static/media/heart_full.png": "/ShopFrame/static/media/heart_full.24cdd3a19b8cc7db81a2.png",
+    "index.html": "/ShopFrame/index.html",
+    "main.1485d6a8.css.map": "/ShopFrame/static/css/main.1485d6a8.css.map",
+    "main.cb605ceb.js.map": "/ShopFrame/static/js/main.cb605ceb.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.1485d6a8.css",
+    "static/js/main.cb605ceb.js"
+  ]
+}
