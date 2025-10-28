@@ -1,0 +1,222 @@
+// AdminFooter.scss
+.admin-footer {
+  background-color: #000000;
+  color: #ffffff;
+  padding: 40px 0;
+  margin-top: 0;
+}
+
+.admin-footer-container {
+  max-width: 1920px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+// 데스크톱 레이아웃 (1920px 환경)
+.admin-footer-desktop {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 20px;
+  white-space: nowrap;
+  max-width: 1200px;
+  margin: 0 auto;
+  
+  .admin-footer-logo {
+    flex-shrink: 0;
+    
+    .admin-footer-logo-img {
+      width: 200px;
+      height: auto;
+    }
+  }
+  
+  .admin-footer-logo-divider {
+    width: 1px;
+    height: 120px;
+    background-color: #ffffff;
+    flex-shrink: 0;
+  }
+  
+  .admin-footer-project-info {
+    flex-shrink: 0;
+    margin-right: 20px;
+    
+    p {
+      margin: 0 0 8px 0;
+      font-size: 14px;
+      line-height: 1.6;
+      color: #ffffff;
+      white-space: nowrap;
+      
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+  
+  .admin-footer-members {
+    flex-shrink: 0;
+    margin-right: 20px;
+    
+    .admin-footer-section-title {
+      font-size: 20px;
+      font-weight: 600;
+      color: #ffffff;
+      margin: 0 0 15px 0;
+      white-space: nowrap;
+    }
+    
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      
+      li {
+        margin-bottom: 8px;
+        font-size: 14px;
+        line-height: 1.5;
+        color: #ffffff;
+        white-space: nowrap;
+      }
+    }
+  }
+  
+  .admin-footer-roles {
+    flex: 1;
+    
+    .admin-footer-section-title {
+      font-size: 20px;
+      font-weight: 600;
+      color: #ffffff;
+      margin: 0 0 15px 0;
+      white-space: nowrap;
+    }
+    
+    ul {
+      list-style: disc;
+      padding-left: 20px;
+      margin: 0;
+      
+      li {
+        margin-bottom: 8px;
+        font-size: 14px;
+        line-height: 1.5;
+        color: #ffffff;
+        white-space: nowrap;
+      }
+    }
+  }
+}
+
+// 모바일 레이아웃
+.admin-footer-mobile {
+  display: none;
+}
+
+// 반응형 디자인
+@media (max-width: 1200px) {
+  .admin-footer-desktop {
+    display: none;
+  }
+  
+  .admin-footer-mobile {
+    display: block;
+    
+    .admin-footer-mobile-logo {
+      text-align: center;
+      margin-bottom: 20px;
+      
+      .admin-footer-logo-img {
+        width: 200px;
+        height: auto;
+      }
+    }
+    
+    .admin-footer-mobile-project-info {
+      text-align: center;
+      margin-bottom: 30px;
+      
+      p {
+        margin: 0;
+        font-size: 14px;
+        line-height: 1.6;
+        color: #ffffff;
+      }
+    }
+    
+    .admin-footer-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+      
+      th, td {
+        padding: 12px 8px;
+        text-align: left;
+        border-bottom: 1px solid #333;
+        font-size: 13px;
+        color: #ffffff;
+      }
+      
+      th {
+        background-color: #333;
+        font-weight: 600;
+        font-size: 14px;
+      }
+      
+      td {
+        vertical-align: top;
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .admin-footer {
+    padding: 30px 0;
+  }
+  
+  .admin-footer-container {
+    padding: 0 15px;
+  }
+  
+  .admin-footer-mobile {
+    .admin-footer-mobile-logo {
+      .admin-footer-logo-img {
+        width: 150px;
+      }
+    }
+    
+    .admin-footer-mobile-project-info {
+      p {
+        font-size: 13px;
+      }
+    }
+    
+    .admin-footer-table {
+      th, td {
+        padding: 10px 6px;
+        font-size: 12px;
+      }
+      
+      th {
+        font-size: 13px;
+      }
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .admin-footer-mobile {
+    .admin-footer-table {
+      th, td {
+        padding: 8px 4px;
+        font-size: 11px;
+      }
+      
+      th {
+        font-size: 12px;
+      }
+    }
+  }
+}

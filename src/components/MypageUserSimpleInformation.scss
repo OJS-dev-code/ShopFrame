@@ -1,0 +1,90 @@
+.mypage-welcome-section {
+  margin-bottom: 30px;
+}
+
+.mypage-welcome-banner {
+  display: flex;
+  flex-direction: column;
+  height: 120px;
+  border: 1px solid #696D99;
+}
+
+.mypage-welcome-banner .mypage-top-section {
+  background: #696D99;
+  color: white;
+  padding: 20px;
+  height: 50%;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.mypage-welcome-banner .mypage-bottom-section {
+  background: white;
+  color: #333;
+  padding: 20px;
+  height: 50%;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.mypage-user-info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  
+  span {
+    font-size: 17px;
+    font-weight: 500;
+  }
+}
+
+.mypage-user-icon {
+  width: 34.13px;
+  height: 34.13px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mypage-user-stats {
+  display: flex;
+  gap: 20px;
+  justify-content: space-around;
+  width: 100%;
+}
+
+.mypage-user-stats span {
+  color: #333333;
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.mypage-user-stats .mypage-coupon-link {
+  color: #333333;
+  font-size: 15px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  padding: 4px 8px;
+  border-radius: 4px;
+  
+  &:hover {
+    background-color: rgba(127, 133, 205, 0.1);
+    color: #7F85CD;
+    transform: translateY(-1px);
+  }
+  
+  &:active {
+    transform: translateY(0);
+  }
+}
+
+.mypage-user-stats .mypage-number {
+  color: #ff0000;
+  font-weight: 500;
+  font-size: 16px;
+  padding-left: 10px;
+}
+
