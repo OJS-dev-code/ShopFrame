@@ -1,0 +1,172 @@
+@import url('https://fonts.googleapis.com/css2?family=Kalnia:wght@100..700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+/* 고운돋움 한글 폰트 */
+@font-face {
+    font-family: 'GowoonDodum';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/GowunDodum-Regular.woff') format('woff');
+    font-weight: normal;
+    font-display: swap;
+}
+
+:root {
+  --hero-h: min(72vh, 680px);
+  --gap: 14px;
+  --txt: #111;
+  --muted: #8a8a8a;
+  --shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+  --font-main: 'Kalnia', serif; /* ✅ Kalnia 변수 등록 */
+}
+
+.hero-slider {
+  position: relative;
+  height: var(--hero-h);
+  overflow: hidden;
+  background: #222; /* 어두운 톤 배경(이미지 로딩 전 대비) */
+  font-family: var(--font-main); /* ✅ 기본 폰트 Kalnia */
+}
+
+.slides {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.slide {
+  position: absolute;
+  inset: 0;
+  background-image: var(--bg);
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  transform: scale(1.02);
+  transition: opacity 0.6s ease, transform 0.8s ease;
+  will-change: transform, opacity;
+}
+
+.slide.is-active {
+  opacity: 1;
+  transform: scale(1);
+  z-index: 1;
+}
+
+/* ====== SHOP NOW 버튼(얇은 보더 + 투명 배경 + 지속 플립) ====== */
+.shop-now {
+  font-family: var(--font-main); /* ✅ Kalnia */
+  position: absolute;
+  left: 50%;
+  bottom: 0%;
+  transform: translate(-50%, -50%);
+  display: inline-block;
+
+  /* 회전 중에도 안 사라지게 */
+  backface-visibility: visible;
+  -webkit-backface-visibility: visible; /* Safari */
+  transform-style: preserve-3d;
+  will-change: transform;
+
+  /* 스샷처럼 미니멀한 버튼 스타일 */
+  padding: 10px 18px;
+  border: 1px solid rgba(255, 255, 255, 0.9);
+  background: transparent;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  font-size: 12.5px;
+  text-transform: uppercase;
+
+  border-radius: 999px;
+  box-shadow: none;
+
+  /* 뒤집힘 유지 */
+  animation: flipY var(--flipDur, 2400ms) linear infinite;
+}
+
+.shop-now:hover {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+@keyframes flipY {
+  0% {
+    transform: translate(-50%, -50%) rotateY(0deg);
+  }
+  50% {
+    transform: translate(-50%, -50%) rotateY(180deg);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotateY(360deg);
+  }
+}
+
+/* ====== 왼쪽 아래 텍스트 네비(프로모션01/02) ====== */
+.slide-nav {
+  position: absolute;
+  left: 80px; /* 더 안쪽으로 이동 */
+  bottom: 0px; /* 더 높은 위치로 이동 */
+  display: flex;
+  gap: 0px;
+  flex-wrap: wrap;
+  max-width: min(60vw, 720px);
+  z-index: 2;
+  flex-direction: column;
+  text-align: left; /* 왼쪽 정렬 */
+}
+
+.nav-item {
+  font-family: 'GowoonDodum'; /* 텍스트 네비게이션에만 고운돋움 적용 */
+  appearance: none;
+  border: none;
+  background: transparent;
+  color: #fff;
+  padding: 8px 12px; /* 패딩도 조금 더 크게 */
+  border-radius: 999px;
+  font-size: 18px; /* 텍스트 크기 증가 */
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s, border-color 0.2s, transform 0.2s;
+  text-align: left; /* 왼쪽 정렬 */
+}
+
+.nav-item:hover {
+  transform: translateY(-1px);
+}
+
+.nav-item.is-active {
+  font-weight: 700; /* 굵게 */
+  color: #fff; /* 흰색 */
+  border-color: #fff;
+  /* background: rgba(255,255,255,.14); */
+}
+
+/* 진행바 숨김 */
+.progress {
+  display: none !important;
+}
+
+.progress > span {
+  display: none !important;
+}
+
+/* 보조 컨트롤 숨김 */
+.ctrl {
+  display: none !important;
+}
+
+.ctrl-btn {
+  display: none !important;
+}
+
+/* 모바일에서 이미지 object-fit 변경 */
+@media (max-width: 768px) {
+  .slide {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+}
+
+/* 모션 줄이기 */
+@media (prefers-reduced-motion: reduce) {
+  .shop-now {
+    animation: none;
+  }
+}

@@ -1,0 +1,485 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;600;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Noto Sans KR', sans-serif;
+  background-color: #FFFFFF;
+  color: #1A1A1A;
+  line-height: 1.4;
+}
+
+.signup-page {
+  background-color: #FFFFFF;
+  min-height: 100vh;
+}
+
+.signup-container {
+  max-width: 1200px !important;
+  width: 100% !important;
+  margin: 40px auto !important;
+  background-color: #FFFFFF !important;
+  min-height: calc(100vh - 200px) !important;
+  position: relative !important;
+  border-radius: 12px !important;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.1) !important;
+  padding: 40px 60px !important;
+}
+
+.main-content {
+  padding: 0;
+  width: 100%;
+}
+
+.page-title {
+  font-size: 36px !important;
+  font-weight: bold !important;
+  color: #333 !important;
+  margin: 0 0 30px 0 !important;
+  text-align: center !important;
+}
+
+.progress-steps {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 24px;
+  gap: 8px;
+}
+
+.step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.step-number {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background-color: #E5E5E5;
+  color: #999999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.step.active .step-number {
+  background-color: #007AFF;
+  color: #FFFFFF;
+}
+
+.step-text {
+  font-size: 14px;
+  color: #999999;
+  font-weight: 500;
+}
+
+.step.active .step-text {
+  color: #007AFF;
+  font-weight: 500;
+}
+
+.step-line {
+  width: 32px;
+  height: 1px;
+  background-color: #E5E5E5;
+  margin: 0 8px;
+}
+
+.form-section {
+  margin-bottom: 32px;
+  border-bottom: 1px solid #E5E5E5;
+  padding-bottom: 24px;
+}
+
+.form-section:last-of-type {
+  border-bottom: none;
+}
+
+.form-section-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: #1A1A1A;
+  margin-bottom: 16px;
+}
+
+.form-row {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 16px;
+  gap: 16px;
+}
+
+.form-label {
+  min-width: 120px;
+  font-size: 14px;
+  color: #1A1A1A;
+  font-weight: 500;
+  padding-top: 12px;
+}
+
+.form-label.required {
+  color: #FF0000;
+  position: static;
+}
+
+.form-label.required::before {
+  content: "• ";
+  color: #FF0000;
+  font-size: inherit;
+  position: static;
+  left: auto;
+  top: auto;
+}
+
+.form-label.required.label-id,
+.form-label.required.label-password,
+.form-label.required.label-confirm,
+.form-label.required.label-name,
+.form-label.required.label-phone,
+.form-label.required.label-email,
+.form-label.required.label-membertype {
+  color: #1A1A1A !important;
+}
+
+.required-notice {
+  display: inline-flex;
+  align-items: center;
+  font-size: 14px;
+  color: #1A1A1A;
+  font-weight: 500;
+  margin-bottom: 0;
+  margin-left: auto;
+}
+
+.required-notice .dot {
+  color: #FF0000;
+  font-size: 16px;
+  margin-right: 4px;
+}
+
+.form-section-title-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+
+.form-input-group {
+  flex: 1;
+  max-width: calc(100% - 136px);
+  position: relative;
+}
+
+.form-input {
+  width: 100%;
+  height: 44px;
+  border: none;
+  border-bottom: 1px solid #D9D9D9;
+  border-radius: 0;
+  padding: 12px 0;
+  font-size: 16px;
+  color: #1A1A1A;
+  background-color: transparent;
+  transition: border-color 0.2s;
+  box-sizing: border-box;
+  outline: none;
+}
+
+#password, #confirmPassword {
+  padding-right: 44px !important;
+}
+
+.pw-toggle-btn {
+  position: absolute !important;
+  top: 50% !important;
+  right: 12px !important;
+  transform: translateY(-50%) !important;
+  background: none !important;
+  border: none !important;
+  padding: 0 !important;
+  cursor: pointer !important;
+  z-index: 10 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  height: 24px !important;
+  width: 24px !important;
+  pointer-events: auto !important;
+}
+
+.pw-toggle-btn svg {
+  width: 20px !important;
+  height: 20px !important;
+  flex-shrink: 0 !important;
+}
+
+.form-input:focus {
+  outline: none;
+  border-bottom-color: #000000;
+}
+
+.form-input.error {
+  border-bottom-color: #1A1A1A;
+}
+
+.form-hint {
+  font-size: 12px;
+  color: #999999;
+  margin-top: 4px;
+}
+
+.radio-group {
+  display: flex;
+  gap: 16px;
+  padding-top: 12px;
+}
+
+.radio-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+}
+
+.radio-input {
+  width: 16px;
+  height: 16px;
+  accent-color: #007AFF;
+}
+
+.radio-label {
+  font-size: 14px;
+  color: #1A1A1A;
+}
+
+.address-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 100%;
+}
+
+.address-row {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.address-input {
+  width: 100%;
+  height: 44px;
+  border: none;
+  border-bottom: 1px solid #D9D9D9;
+  border-radius: 0;
+  padding: 12px 0;
+  font-size: 16px;
+  color: #1A1A1A;
+  background-color: transparent;
+  box-sizing: border-box;
+  outline: none;
+}
+
+.address-search-btn {
+  height: 44px;
+  padding: 0 16px;
+  background-color: #FFFFFF;
+  border: 1px solid #E5E5E5;
+  border-radius: 6px;
+  font-size: 14px;
+  color: #1A1A1A;
+  cursor: pointer;
+  transition: all 0.2s;
+  white-space: nowrap;
+}
+
+.address-search-btn:hover {
+  background-color: #F8F9FA;
+}
+
+.phone-group {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.phone-select {
+  width: 120px;
+  min-width: 100px;
+  height: 44px;
+  border: none;
+  border-bottom: 1px solid #D9D9D9;
+  border-radius: 0;
+  padding: 12px 0;
+  font-size: 16px;
+  color: #1A1A1A;
+  background-color: transparent;
+  box-sizing: border-box;
+  outline: none;
+}
+
+.phone-input {
+  flex: 1;
+  height: 44px;
+  border: none;
+  border-bottom: 1px solid #D9D9D9;
+  border-radius: 0;
+  padding: 12px 0;
+  font-size: 16px;
+  color: #1A1A1A;
+  text-align: left;
+  background-color: transparent;
+  box-sizing: border-box;
+  outline: none;
+}
+
+.phone-separator {
+  font-size: 14px;
+  color: #999999;
+}
+
+.button-section {
+  padding: 20px 16px;
+  background-color: #FFFFFF;
+}
+
+.button-group {
+  display: flex;
+  gap: 12px;
+}
+
+.cancel-btn {
+  flex: 1;
+  height: 44px;
+  background-color: #FFFFFF;
+  color: #666666;
+  border: 1px solid #E5E5E5;
+  border-radius: 6px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.cancel-btn:hover {
+  background-color: #F8F9FA;
+  border-color: #CCCCCC;
+}
+
+.register-btn {
+  flex: 1;
+  height: 44px;
+  background-color: #1A1A1A;
+  color: #FFFFFF;
+  border: none;
+  border-radius: 6px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.register-btn:hover {
+  background-color: #333333;
+}
+
+.register-btn:disabled {
+  background-color: #E5E5E5;
+  color: #999999;
+  cursor: not-allowed;
+}
+
+#userId,
+.phone-input,
+.phone-select {
+  border-bottom-color: #1A1A1A;
+}
+
+@media (max-width: 1200px) {
+  .signup-container {
+    max-width: 100%;
+    padding: 32px 20px;
+    margin: 20px auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .signup-container {
+    max-width: 100%;
+    padding: 24px 16px;
+    border-radius: 8px;
+  }
+  
+  .main-content {
+    padding: 0;
+  }
+  
+  .button-section {
+    padding: 16px 0 0 0;
+  }
+  
+  .form-row {
+    flex-direction: column;
+    gap: 8px;
+  }
+  
+  .form-label {
+    min-width: auto;
+    padding-top: 0;
+  }
+  
+  .phone-group {
+    flex-wrap: wrap;
+  }
+  
+  .phone-select {
+    width: 100%;
+  }
+}
+
+#postcodeLayer {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0; 
+  top: 0; 
+  right: 0; 
+  bottom: 0;
+  background: rgba(0,0,0,0.3);
+}
+
+#postcodeLayer .layer-content {
+  position: absolute;
+  left: 50%; 
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.18);
+  padding: 16px;
+  width: 100%;
+  max-width: 500px;
+  min-width: 320px;
+}
+
+#postcodeLayerContent {
+  width: 100%;
+  height: 400px;
+}
+
+#postcodeLayer .close-btn {
+  display: block;
+  margin: 0 0 8px auto;
+  background: none;
+  border: none;
+  font-size: 18px;
+  cursor: pointer;
+}

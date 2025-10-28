@@ -1,0 +1,39 @@
+/* 반응형 헤더 스타일 */
+
+/* 데스크톱 헤더 - 모바일에서 숨김 */
+.desktop-header {
+  @media (max-width: 768px) {
+    display: none;
+  }
+}
+
+/* 모바일 헤더 - 데스크톱에서 숨김 */
+.mobile-header {
+  @media (min-width: 769px) {
+    display: none;
+  }
+}
+
+/* 모바일에서 상단 패딩 추가 */
+.mobile-padding {
+  @media (max-width: 768px) {
+    padding-top: 56px; /* 모바일 헤더 높이 */
+  }
+  
+  @media (min-width: 769px) {
+    padding-top: 0;
+  }
+}
+
+/* 배너 반응형 스타일 */
+.desktop-banner {
+  @media (max-width: 768px) {
+    display: none; /* 모바일에서 데스크톱 배너 숨김 */
+  }
+}
+
+.mobile-banner {
+  @media (min-width: 769px) {
+    display: none; /* 데스크톱에서 모바일 배너 숨김 */
+  }
+}
